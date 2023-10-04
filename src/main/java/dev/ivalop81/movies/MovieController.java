@@ -17,19 +17,7 @@ import java.util.Optional;
 public class MovieController {
     @Autowired
     private MovieService movieService;
-    // 1- return a simple text String
-    // @GetMapping
-    // public String allMovies() {
-    //    return "All movies!";
-    // }
 
-    // 2- return a simple String too, but you could check in a terminal with curl -i ...
-    // @GetMapping
-    // public ResponseEntity<String> getAllMovies() {
-    //    return new ResponseEntity<String>("All movies!", HttpStatus.OK);
-    // }
-
-    // 3- retrieving data from mongodb
     @GetMapping
     public ResponseEntity<List<Movie>> getAllMovies() {
         return new ResponseEntity<List<Movie>>(movieService.allMovies(), HttpStatus.OK);
